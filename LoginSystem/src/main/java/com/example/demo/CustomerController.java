@@ -21,24 +21,20 @@ public class CustomerController {
 	
 	@Autowired
 	 CustomerDAO customerDAO; 
-	
-	/* SAVE AN EMPLOYEE */
+
 	 @PostMapping("/customers")
 	 public CustomerDetails createEmployee(@Valid @RequestBody CustomerDetails customer) {
 	 return customerDAO.save(customer);
 	 } 
-	 
-	 /* GET ALL EMPLOYEES*/
+
 	 @GetMapping("/customers")
 	 public List<CustomerDetails> getAllEmployees(){
 	 return customerDAO.findAll();
 	 }
 
-	 /* GET EMPLOYEE BY ID */
 	 @GetMapping("/customers/{id}")
 	 public ResponseEntity<CustomerDetails> getEmployeeById(@PathVariable(value="id") Integer
 	id){
-
 
 	 CustomerDetails customer=customerDAO.findOne(id);
 	 
@@ -48,11 +44,7 @@ public class CustomerController {
 	 return ResponseEntity.ok().body(customer);
 	 }
 	 
-	 
-	 
-	 
-	 
-	 /* UPDATE AN EMPLOYEE BY ID */
+	
 	@PutMapping("/customers/{id}")
 	 public ResponseEntity<CustomerDetails> updateCustomer(@PathVariable(value="id") Integer id,
 	@Valid @RequestBody CustomerDetails cusDetails){
@@ -76,10 +68,6 @@ public class CustomerController {
 	 return ResponseEntity.ok().body(cusdet);
 	 } 
 
-
-	
-	 /*DELETE AN EMPLOYEE*/
-	
 	 @DeleteMapping("/customers/{id}")
 	 public ResponseEntity<CustomerDetails> deletecustomer(@PathVariable(value="id") Integer id){
 

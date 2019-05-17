@@ -14,18 +14,18 @@ public class CustomerDAO {
 	@Autowired
 	 CustomerRepo2 customerRepository; 
 	
-	/* SAVE AN EMPLOYEE */
+	
 	 @Transactional(readOnly = false,isolation = Isolation.READ_COMMITTED)
 	 public CustomerDetails save(CustomerDetails emp) {
 	 return customerRepository.save(emp);
 	 } 
 	 
-	 /* SEARCH ALL EMPLOYEES */
+	 
 	 public List<CustomerDetails> findAll(){
 	 return customerRepository.findAll();
 	 }
 
-	 /* GET AN EMPLOYEE */
+	 
 	 public CustomerDetails findOne(int id) {
 	 Optional<CustomerDetails> op = customerRepository.findById(id);
 	 if(op.isPresent()) {
@@ -36,7 +36,6 @@ public class CustomerDAO {
 	 }
 	 }
 
-	 /* DELETE AN EMPLOYEE by id */
 	 @Transactional(readOnly = false,isolation = Isolation.READ_COMMITTED)
 	 public void delete(CustomerDetails customer) {
 	 customerRepository.delete(customer);
