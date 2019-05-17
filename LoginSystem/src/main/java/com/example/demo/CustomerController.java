@@ -65,6 +65,11 @@ public class CustomerController {
 	 cus.setName(cusDetails.getName());
 	 cus.setUsername(cusDetails.getUsername());
 	 cus.setaddress(cusDetails.getaddress());
+	 cus.setPhoneNum(cusDetails.getPhoneNum());
+	 cus.setaddress(cusDetails.getaddress());
+	 cus.setConfirmpwd(cusDetails.getConfirmpwd());
+	 cus.setPwd(cusDetails.getPwd());
+	 cus.setEmail(cusDetails.getEmail());
 
 	
 	 CustomerDetails cusdet=customerDAO.save(cus);
